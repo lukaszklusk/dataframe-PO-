@@ -1,11 +1,11 @@
 import javax.xml.crypto.Data;
 
 public class DataFrame implements Cloneable{
-    private String[] cnames;
-    private String[] ctypes;
-    private Column[] colms;
-    private int width;
-    private int heigth;
+    public String[] cnames;
+    public String[] ctypes;
+    public Column[] colms;
+    public int width;
+    public int heigth;
     public DataFrame(String[] col_names,String[] col_types){
         cnames = col_names;
         ctypes = col_types;
@@ -74,19 +74,21 @@ public class DataFrame implements Cloneable{
         }
         return dfr;
     }
+    public void print(){
+        for(int i=0;i<heigth;i++){
+            for(int j=0;j<width;j++){
+                System.out.print(colms[j].col.get(i));
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args){
-        DataFrame df = new DataFrame(new String[]{"kol1","kol2","kol3"},new String[]{"int","double","MyType"});
-        Object cc = new MyType(4);
-        df.Add(cc,2);
-        df.Add(0.5,1);
-        df.Add(9,0);
-        /*MyType bb = (MyType)df.colms[2].col.get(0);
-        System.out.println(bb.Get());
-        System.out.println(df.size());
-        Column c = df.get("kol1");
-        System.out.println(c.col.get(0));*/
-        /*DataFrame df0 = df.iloc(0);
-        System.out.println(df0.colms[0].col.get(0));*/
-
+        SparseDataFrame dfs1 = new SparseDataFrame(new String[] {"kol1","kol2"}, new String[] {"int","int"}, 0);
+        dfs1.sFilld();
+        DataFrame df1 = dfs1.toDense();
+        df1.print();
+        SparseDataFrame dfs2 = new SparseDataFrame(df1,0);
+        DataFrame df2 = dfs2.toDense();
+        df2.print();
     }
 }
