@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class SparseColumn extends Column {
-    public SparseColumn(String n,String t){
+    public SparseColumn(String n,Class<? extends Value> t){
         super(n,t);
     }
 
@@ -11,11 +11,12 @@ public class SparseColumn extends Column {
         h = 5;
     }
 
-    public void Add(Object val, Object hidden){
-        if(val != hidden){
-            CooValue a = new CooValue(h,val);
+    public void Add(Value val, VInteger hidden){
+        if(val.neq(hidden)){
+            CooValue a = new CooValue(h,((VInteger)val).val);
             col.add(a);
         }
         h++;
     }
+
 }

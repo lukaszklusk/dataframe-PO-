@@ -1,20 +1,22 @@
+import java.util.List;
+
 public class SparseDataFrame extends DataFrame {
     public SparseColumn colms[];
-    public Object hidden;
-    public SparseDataFrame(String[] col_names, String[] col_types,Object hide){
+    public VInteger hidden;
+    public SparseDataFrame(String[] col_names, List<Class<? extends Value>> col_types,VInteger hide){
         super(col_names,col_types);
         colms = new SparseColumn[width];
         for(int i =0;i<width;i++){
-            colms[i] = new SparseColumn(col_names[i],col_types[i]);
+            colms[i] = new SparseColumn(col_names[i], col_types.get(i));
         }
         hidden = hide;
     }
 
-    public SparseDataFrame(DataFrame df, Object hide){
+    public SparseDataFrame(DataFrame df, VInteger hide){
         super(df.cnames,df.ctypes);
         colms = new SparseColumn[width];
         for(int i =0;i<width;i++){
-            colms[i] = new SparseColumn(df.cnames[i],df.ctypes[i]);
+            colms[i] = new SparseColumn(df.cnames[i], df.ctypes.get(i));
         }
         hidden = hide;
         for(int i =0;i<width;i++){
@@ -33,7 +35,7 @@ public class SparseDataFrame extends DataFrame {
             itp++;
             for(int i=0;i<n.h;i++){
                 if(i == itc){
-                    dfr.colms[it].Add(tmp.val);
+                    dfr.colms[it].Add(new VInteger(tmp.val));
                     if(itp < n.col.size()) {
                         tmp = (CooValue) n.col.get(itp);
                         itc = tmp.pos;
@@ -54,5 +56,17 @@ public class SparseDataFrame extends DataFrame {
         for(int i=0;i<width;i++){
             colms[i].sFill5();
         }
+    }
+
+    public DataFrame iloc(int i){
+        DataFrame dft = this.toDense();
+        DataFrame dfr = dft.iloc(i);
+        return new SparseDataFrame(dfr,hidden);
+    }
+
+    public DataFrame iloc(int from,int to){
+        DataFrame dft = this.toDense();
+        DataFrame dfr = dft.iloc(from,to);
+        return new SparseDataFrame(dfr,hidden);
     }
 }
