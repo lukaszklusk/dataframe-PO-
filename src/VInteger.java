@@ -1,8 +1,10 @@
-
-public class VInteger extends Value {
+public class VInteger extends Value implements Cloneable{
     public int val;
     public VInteger(int v){
         val = v;
+    }
+    public VInteger(){
+        val = 0;
     }
     @Override
     public String toString() {
@@ -10,85 +12,175 @@ public class VInteger extends Value {
     }
 
     @Override
-    public Value add(Value v) {
+    public Value add(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             val = val + ((VInteger) v).val;
             return this;
-        }else return null;
+        }
+        if(v instanceof VDouble){
+            val = val + (int)((VDouble) v).val;
+            return this;
+        }
+        if(v instanceof VFloat){
+            val = val + (int) ((VFloat) v).val;
+            return this;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value sub(Value v) {
+    public Value sub(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             val = val - ((VInteger) v).val;
             return this;
-        }else return null;
+        }
+        if(v instanceof VDouble){
+            val = val - (int)((VDouble) v).val;
+            return this;
+        }
+        if(v instanceof VFloat){
+            val = val - (int) ((VFloat) v).val;
+            return this;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value mul(Value v) {
+    public Value mul(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             val = val * ((VInteger) v).val;
             return this;
-        }else return null;
+        }
+        if(v instanceof VDouble){
+            val = val * (int)((VDouble) v).val;
+            return this;
+        }
+        if(v instanceof VFloat){
+            val = val * (int) ((VFloat) v).val;
+            return this;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value div(Value v) {
-        if(v instanceof VInteger){
+    public Value div(Value v) throws DivByZero, IncompatibleTypes {
+        if (v instanceof VInteger) {
+            if (((VInteger) v).val == 0) throw new DivByZero();
             val = val / ((VInteger) v).val;
             return this;
-        }else return null;
+        }
+        if (v instanceof VDouble) {
+            if (((VDouble) v).val == 0) throw new DivByZero();
+            val = val / (int) ((VDouble) v).val;
+            return this;
+        }
+        if (v instanceof VFloat) {
+            if (((VFloat) v).val == 0) throw new DivByZero();
+            val = val / (int) ((VFloat) v).val;
+            return this;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value pow(Value v) {
+    public Value pow(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             val = DataFrame.powr(val,((VInteger) v).val);
             return this;
-        }else return null;
+        }
+        if(v instanceof VDouble){
+            val = (int) Math.pow(val,((VDouble) v).val);
+            return this;
+        }
+        if(v instanceof VFloat){
+            val = (int) Math.pow(val,(double) ((VFloat) v).val);
+            return this;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean eq(Value v){
+    public boolean eq(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             return val == ((VInteger) v).val;
-        }else return false;
+        }
+        if(v instanceof VDouble){
+            return val == (int) ((VDouble) v).val;
+        }
+        if(v instanceof VFloat){
+            return val == (int) ((VFloat) v).val;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean gte(Value v) {
+    public boolean gte(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             return val >= ((VInteger) v).val;
-        }else return false;
+        }
+        if(v instanceof VDouble){
+            return val >= (int) ((VDouble) v).val;
+        }
+        if(v instanceof VFloat){
+            return val >= (int) ((VFloat) v).val;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean lte(Value v) {
+    public boolean lte(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             return val <= ((VInteger) v).val;
-        }else return false;
+        }
+        if(v instanceof VDouble) {
+            return val <= (int) ((VDouble) v).val;
+        }
+        if(v instanceof VFloat){
+            return val <= (int) ((VFloat) v).val;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean gt(Value v) {
+    public boolean gt(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             return val > ((VInteger) v).val;
-        }else return false;
+        }
+        if(v instanceof VDouble){
+            return val > (int) ((VDouble) v).val;
+        }
+        if(v instanceof VFloat){
+            return val > (int) ((VFloat) v).val;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean lt(Value v) {
+    public boolean lt(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             return val < ((VInteger) v).val;
-        }else return false;
+        }
+        if(v instanceof VDouble){
+            return val < (int) ((VDouble) v).val;
+        }
+        if(v instanceof VFloat){
+            return val < (int) ((VFloat) v).val;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean neq(Value v) {
+    public boolean neq(Value v) throws IncompatibleTypes {
         if(v instanceof VInteger){
             return val != ((VInteger) v).val;
-        }else return true;
+        }
+        if(v instanceof VDouble){
+            return val != (int) ((VDouble) v).val;
+        }
+        if(v instanceof VFloat){
+            return val != (int) ((VFloat) v).val;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
@@ -106,5 +198,11 @@ public class VInteger extends Value {
     public VInteger create(String s) {
         int vn = Integer.parseInt(s);
         return new VInteger(vn);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        Object cln = new VInteger(val);
+        return cln;
     }
 }

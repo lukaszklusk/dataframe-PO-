@@ -10,6 +10,7 @@ public class DataFrame implements Cloneable{
 
     private class GroupedDataFrame implements Groupby{
         LinkedList<DataFrame> dataframes;
+        int key_id;
 
         @Override
         public DataFrame max() {
@@ -48,6 +49,7 @@ public class DataFrame implements Cloneable{
         for(it=0;it<width;it++){
             if(colms[it].name == colnames) break;
         }
+        r.key_id=it;
         for(int i=0;i<heigth;i++){
             if(i==0){
                 r.dataframes = new LinkedList<>();
@@ -57,9 +59,13 @@ public class DataFrame implements Cloneable{
                 boolean DataFrameGroupFound = false;
                 int l = 0;
                 for(DataFrame n: r.dataframes){
-                    if(this.colms[it].col.get(i).eq(n.colms[it].col.get(0))){
-                        DataFrameGroupFound = true;
-                        break;
+                    try {
+                        if(this.colms[it].col.get(i).eq(n.colms[it].col.get(0))){
+                            DataFrameGroupFound = true;
+                            break;
+                        }
+                    } catch (IncompatibleTypes incompatibleTypes) {
+                        incompatibleTypes.printStackTrace();
                     }
                     l++;
                 }
@@ -85,10 +91,6 @@ public class DataFrame implements Cloneable{
             colms[i] = new Column(col_names[i], col_types.get(i));
         }
         heigth = 0;
-    }
-
-    public DataFrame(String filename,List<Class<? extends Value>> col_types) throws IllegalAccessException, IOException, InstantiationException {
-        new DataFrame(filename,col_types,true);
     }
 
     public DataFrame(String filename, List<Class<? extends Value>> col_types,boolean header) throws IOException, IllegalAccessException, InstantiationException {
@@ -233,11 +235,7 @@ public class DataFrame implements Cloneable{
         try {
             DataFrame df1 = new DataFrame("data.csv",ct,true);
             df1.iloc(0,3).print();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
+        } catch (IllegalAccessException | InstantiationException | IOException e) {
             e.printStackTrace();
         }
     }

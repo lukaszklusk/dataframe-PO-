@@ -2,77 +2,86 @@ import java.text.ParseException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class VDatetime extends Value {
+public class VDatetime extends Value implements Cloneable{
     public Date val;
     public VDatetime(Date v){
         val = v;
     }
-
-    @Override
-    public Value add(Value v) {
-        return null;
+    public VDatetime(){
+        val = new Date();
     }
 
     @Override
-    public Value sub(Value v) {
-        return null;
+    public Value add(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value mul(Value v) {
-        return null;
+    public Value sub(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value div(Value v) {
-        return null;
+    public Value mul(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value pow(Value v) {
-        return null;
+    public Value div(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean gt(Value v) {
+    public Value pow(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
+    }
+
+    @Override
+    public boolean gt(Value v) throws IncompatibleTypes {
         if(v instanceof VDatetime){
             return val.after(((VDatetime) v).val);
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean gte(Value v) {
+    public boolean gte(Value v) throws IncompatibleTypes {
         if(v instanceof VDatetime){
             return val.after(((VDatetime) v).val) || val.equals(((VDatetime) v).val);
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean lt(Value v) {
+    public boolean lt(Value v) throws IncompatibleTypes {
         if(v instanceof VDatetime){
             return val.before(((VDatetime) v).val);
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean lte(Value v) {
+    public boolean lte(Value v) throws IncompatibleTypes {
         if(v instanceof VDatetime){
             return val.before(((VDatetime) v).val) || val.equals(((VDatetime) v).val);
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean eq(Value v) {
+    public boolean eq(Value v) throws IncompatibleTypes {
         if(v instanceof VDatetime){
             return val.equals(((VDatetime) v).val);
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean neq(Value v) {
+    public boolean neq(Value v) throws IncompatibleTypes {
         if(v instanceof VDatetime){
             return  !val.equals(((VDatetime) v).val);
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
@@ -104,5 +113,11 @@ public class VDatetime extends Value {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String ret = sdf.format(val);
         return ret;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        Object cln = new VDatetime(val);
+        return cln;
     }
 }

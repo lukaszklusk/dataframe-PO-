@@ -1,7 +1,10 @@
-public class VString extends Value {
+public class VString extends Value implements Cloneable{
     public String val;
     public VString(String v){
         val = v;
+    }
+    public VString(){
+        val = "";
     }
     @Override
     public String toString() {
@@ -9,70 +12,76 @@ public class VString extends Value {
     }
 
     @Override
-    public Value add(Value v) {
-        return this;
+    public Value add(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value sub(Value v) {
-        return this;
+    public Value sub(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value mul(Value v) {
-        return this;
+    public Value mul(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value div(Value v) {
-        return this;
+    public Value div(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public Value pow(Value v) {
-        return null;
+    public Value pow(Value v) throws IncompatibleTypes {
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean eq(Value v){
+    public boolean eq(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
             return val == ((VString) v).val;
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean gte(Value v) {
+    public boolean gte(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
             return val.length() >= ((VString) v).val.length();
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean lte(Value v) {
+    public boolean lte(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
             return val.length() <= ((VString) v).val.length();
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean gt(Value v) {
+    public boolean gt(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
             return val.length() > ((VString) v).val.length();
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean lt(Value v) {
+    public boolean lt(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
             return val.length() < ((VString) v).val.length();
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
-    public boolean neq(Value v) {
+    public boolean neq(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
             return val != ((VString) v).val;
-        }else return false;
+        }
+        throw new IncompatibleTypes();
     }
 
     @Override
@@ -89,5 +98,11 @@ public class VString extends Value {
     @Override
     public VString create(String s) {
         return new VString(s);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        Object cln = new VString(val);
+        return cln;
     }
 }
