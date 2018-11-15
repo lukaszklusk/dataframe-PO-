@@ -54,7 +54,16 @@ public class SparseDataFrame extends DataFrame {
 
     public void sFilld(){
         for(int i=0;i<width;i++){
-            colms[i].sFill5();
+            if(i == 0){
+                colms[i].col.add(new CooValue(3,1));
+                colms[i].col.add(new CooValue(4,1));
+                colms[i].h = 5;
+            }else{
+                for(int j=1;j<5;j++){
+                    colms[i].col.add(new CooValue(j-1,j));
+                }
+                colms[i].h = 5;
+            }
         }
     }
 

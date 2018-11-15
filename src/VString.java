@@ -39,7 +39,8 @@ public class VString extends Value implements Cloneable{
     @Override
     public boolean eq(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
-            return val == ((VString) v).val;
+            if(val.compareTo(((VString) v).val)==0) return true;
+            else return false;
         }
         throw new IncompatibleTypes();
     }
@@ -47,7 +48,8 @@ public class VString extends Value implements Cloneable{
     @Override
     public boolean gte(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
-            return val.length() >= ((VString) v).val.length();
+            if(val.compareTo(((VString) v).val)>=0) return true;
+            else return false;
         }
         throw new IncompatibleTypes();
     }
@@ -55,7 +57,8 @@ public class VString extends Value implements Cloneable{
     @Override
     public boolean lte(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
-            return val.length() <= ((VString) v).val.length();
+            if(val.compareTo(((VString) v).val)<=0) return true;
+            else return false;
         }
         throw new IncompatibleTypes();
     }
@@ -63,7 +66,8 @@ public class VString extends Value implements Cloneable{
     @Override
     public boolean gt(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
-            return val.length() > ((VString) v).val.length();
+            if(val.compareTo(((VString) v).val)>0) return true;
+            else return false;
         }
         throw new IncompatibleTypes();
     }
@@ -71,7 +75,8 @@ public class VString extends Value implements Cloneable{
     @Override
     public boolean lt(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
-            return val.length() < ((VString) v).val.length();
+            if(val.compareTo(((VString) v).val)<0) return true;
+            else return false;
         }
         throw new IncompatibleTypes();
     }
@@ -79,7 +84,8 @@ public class VString extends Value implements Cloneable{
     @Override
     public boolean neq(Value v) throws IncompatibleTypes {
         if(v instanceof VString){
-            return val != ((VString) v).val;
+            if(val.compareTo(((VString) v).val)!=0) return true;
+            else return false;
         }
         throw new IncompatibleTypes();
     }

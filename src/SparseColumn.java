@@ -5,16 +5,14 @@ public class SparseColumn extends Column {
         super(n,t);
     }
 
-    public void sFill5(){
-        CooValue n = new CooValue(3,1);
-        col.add(n);
-        h = 5;
-    }
-
     public void Add(Value val, VInteger hidden){
-        if(val.neq(hidden)){
-            CooValue a = new CooValue(h,((VInteger)val).val);
-            col.add(a);
+        try {
+            if(val.neq(hidden)){
+                CooValue a = new CooValue(h,((VInteger)val).val);
+                col.add(a);
+            }
+        } catch (IncompatibleTypes incompatibleTypes) {
+            incompatibleTypes.printStackTrace();
         }
         h++;
     }
