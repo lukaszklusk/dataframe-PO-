@@ -311,6 +311,12 @@ public class DataFrame implements Cloneable{
         return result;
     }
 
+    public GroupedDataFrame groupby(){
+        GroupedDataFrame r = new GroupedDataFrame();
+        r.dataframes.add(this);
+        return r;
+    }
+
     public DataFrame(String[] col_names,List<Class<? extends Value>> col_types){
         cnames = col_names;
         ctypes = col_types;
