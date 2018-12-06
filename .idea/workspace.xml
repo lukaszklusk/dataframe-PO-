@@ -1,26 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="dataframe:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2dbdf24c-8c96-48b0-865e-9d24baf0a41b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Applyable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dataframe_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_xerial_sqlite_jdbc_3_25_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataframe/DataFrameDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataframe/IncorrectWidth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/DataFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/DataFrame$GroupedDataFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/DataFrame$GroupedDataFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/DataFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/DataFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/Groupby.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/Groupby.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/SparseColumn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/SparseColumn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/SparseDataFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/SparseDataFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VDatetime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/VDatetime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VDouble.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/VDouble.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VFloat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/VFloat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VInteger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/VInteger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VString.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/VString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataframe/Value.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/Value.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Groupby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Groupby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SparseColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SparseColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SparseDataFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SparseDataFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataframe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dataframe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/Applyable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/Column.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/CooValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/DataFrame$GroupedDataFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/DataFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/DivByZero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/Groupby.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/IncompatibleTypes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/SparseColumn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/SparseDataFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VDatetime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VDouble.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VFloat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VInteger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/VString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/Value.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Applyable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/Applyable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CooValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/CooValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/DataFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DivByZero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/DivByZero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Groupby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/Groupby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IncompatibleTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/IncompatibleTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SparseColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/SparseColumn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SparseDataFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/SparseDataFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VDatetime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/VDatetime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/VDouble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VFloat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/VFloat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/VInteger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/VString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/Value.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,47 +57,55 @@
     <session id="1181051139">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.200" value="1" />
-          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.31" value="2" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.59" value="1" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.68" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.93" value="1" />
           <entry key="project.open.time.97" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dataframe" value="167" />
-          <entry key="java" value="15332" />
+          <entry key="java" value="17267" />
           <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15499" />
+          <entry key="JAVA" value="17434" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="3" />
+          <entry key="class" value="4" />
           <entry key="csv" value="2" />
           <entry key="dataframe" value="1" />
-          <entry key="java" value="60" />
+          <entry key="java" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="3" />
-          <entry key="JAVA" value="61" />
+          <entry key="CLASS" value="4" />
+          <entry key="JAVA" value="68" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -82,16 +114,16 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DataFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1516">
-              <caret line="462" lean-forward="true" selection-start-line="462" selection-end-line="462" />
+            <state relative-caret-position="135">
+              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2095#2096#0" expanded="true" />
-                <element signature="e#2130#2131#0" expanded="true" />
+                <element signature="class#GroupedDataFrame#0;class#DataFrame#0" />
+                <element signature="method#groupbyS#0;class#DataFrame#0" />
+                <element signature="method#groupby#0;class#DataFrame#0" />
                 <element signature="method#DataFrame#0;class#DataFrame#0" />
-                <element signature="method#DataFrame#1;class#DataFrame#0" />
                 <element signature="method#addS#0;class#DataFrame#0" />
                 <element signature="method#Add#0;class#DataFrame#0" />
                 <element signature="method#get#0;class#DataFrame#0" />
@@ -105,81 +137,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SparseColumn.java">
+        <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrameDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SparseDataFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="62" column="53" lean-forward="true" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/VDatetime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Groupby.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DivByZero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+            <state relative-caret-position="338">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
-                <element signature="e#65#66#0" expanded="true" />
-                <element signature="e#88#89#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/VDouble.java">
+        <entry file="file://$PROJECT_DIR$/src/dataframe/SparseDataFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Value.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/IncompatibleTypes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-              <folding>
-                <element signature="e#81#82#0" expanded="true" />
-                <element signature="e#104#105#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="960">
+              <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -226,6 +199,16 @@
         <option value="$PROJECT_DIR$/src/SparseColumn.java" />
         <option value="$PROJECT_DIR$/src/SparseDataFrame.java" />
         <option value="$PROJECT_DIR$/src/DataFrame.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/IncorrectWidth.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/Value.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/VString.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/VDatetime.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/VFloat.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/VInteger.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/VDouble.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/CooValue.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/DataFrameDB.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/DataFrame.java" />
       </list>
     </option>
   </component>
@@ -236,10 +219,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="293" />
-    <option name="y" value="47" />
-    <option name="width" value="1400" />
-    <option name="height" value="883" />
+    <option name="x" value="131" />
+    <option name="y" value="48" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -247,7 +230,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,7 +240,51 @@
             <path>
               <item name="dataframe" type="b2602c69:ProjectViewProjectNode" />
               <item name="dataframe" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dataframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dataframe" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dataframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dataframe" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="dataframe_jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dataframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dataframe" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dataframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dataframe" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dataframe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dataframe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="dataframe" type="58d84e3e:PackageViewProjectNode" />
+              <item name="dataframe" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="dataframe" type="58d84e3e:PackageViewProjectNode" />
+              <item name="dataframe" type="616d4139:PackageViewModuleNode" />
+              <item name="dataframe" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -267,11 +293,19 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542309804225" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544126063102" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="coverage" />
+    <property name="project.structure.side.proportion" value="0.21147357" />
+    <property name="settings.editor.selected.configurable" value="instant.run" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="dataframe" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -285,16 +319,34 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DataFrameDB">
     <configuration name="DataFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DataFrame" />
+      <option name="MAIN_CLASS_NAME" value="dataframe.DataFrame" />
       <module name="dataframe" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DataFrameDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dataframe.DataFrameDB" />
+      <module name="dataframe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dataframe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DataFrame" />
+      <item itemvalue="Application.DataFrameDB" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DataFrameDB" />
         <item itemvalue="Application.DataFrame" />
       </list>
     </recent_temporary>
@@ -333,7 +385,7 @@
     <frame x="67" y="25" width="1853" height="925" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28666297" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32595462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -341,8 +393,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32998747" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32955974" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32955974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32955974" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -368,17 +420,9 @@
     <MESSAGE value="asfasdf" />
     <option name="LAST_COMMIT_MESSAGE" value="asfasdf" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DataFrame.java</url>
-          <line>261</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dataframe" />
@@ -400,24 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CooValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VFloat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
-          <folding>
-            <element signature="e#3524#3525#0" expanded="true" />
-            <element signature="e#3582#3583#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="-6660" />
@@ -428,49 +454,15 @@
         <state relative-caret-position="-1530" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/IncompatibleTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding>
-            <element signature="e#81#82#0" expanded="true" />
-            <element signature="e#104#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mediana.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Applyable.java">
+    <entry file="file://$PROJECT_DIR$/src/Mediana.java" />
+    <entry file="file://$PROJECT_DIR$/src/dataframe/Applyable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1013">
-          <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="96" column="24" selection-start-line="96" selection-start-column="24" selection-end-line="96" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Value.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Column.java">
+    <entry file="file://$PROJECT_DIR$/src/dataframe/Column.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
@@ -484,62 +476,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DivByZero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding>
-            <element signature="e#65#66#0" expanded="true" />
-            <element signature="e#88#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Groupby.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SparseColumn.java">
+    <entry file="file://$PROJECT_DIR$/src/dataframe/SparseColumn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SparseDataFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/dataframe/Groupby.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="62" column="53" lean-forward="true" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
+        <state relative-caret-position="135">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VDouble.java">
+    <entry file="file://$PROJECT_DIR$/src/dataframe/DivByZero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="45">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VDatetime.java">
+    <entry file="file://$PROJECT_DIR$/src/dataframe/IncompatibleTypes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+        <state relative-caret-position="45">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/dataframe/Value.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1516">
-          <caret line="462" lean-forward="true" selection-start-line="462" selection-end-line="462" />
+        <state relative-caret-position="255">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/VString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="73" column="38" lean-forward="true" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/VDatetime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/VFloat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="230" column="10" selection-start-line="230" selection-start-column="10" selection-end-line="230" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/VDouble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-292">
+          <caret line="169" column="36" lean-forward="true" selection-start-line="169" selection-start-column="36" selection-end-line="169" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/CooValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/VInteger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="230" column="34" selection-start-line="230" selection-start-column="34" selection-end-line="230" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/IncorrectWidth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.25.2.jar!/org/sqlite/core/DB.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="400" selection-start-line="400" selection-end-line="400" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/SparseDataFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrameDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-            <element signature="e#2130#2131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#GroupedDataFrame#0;class#DataFrame#0" />
+            <element signature="method#groupbyS#0;class#DataFrame#0" />
+            <element signature="method#groupby#0;class#DataFrame#0" />
             <element signature="method#DataFrame#0;class#DataFrame#0" />
-            <element signature="method#DataFrame#1;class#DataFrame#0" />
             <element signature="method#addS#0;class#DataFrame#0" />
             <element signature="method#Add#0;class#DataFrame#0" />
             <element signature="method#get#0;class#DataFrame#0" />
@@ -557,10 +611,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>dataframe:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.21147357" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -607,7 +663,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.21147357" />
                 <option value="0.6" />
               </list>
             </option>
@@ -616,10 +672,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>org.xerial:sqlite-jdbc:3.25.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.21147357" />
               </list>
             </option>
           </splitter-proportions>
