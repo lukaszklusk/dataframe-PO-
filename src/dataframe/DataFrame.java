@@ -1,8 +1,8 @@
 package dataframe;
 
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.*;
 
 public class DataFrame implements Cloneable{
     public String[] cnames;
@@ -253,9 +253,14 @@ public class DataFrame implements Cloneable{
                 }
             }
         }
+
+        public ThreadedGDF toThreadedGDF(){
+             ThreadedGDF tgdf = new ThreadedGDF(key_id,dataframes);
+             return tgdf;
+        }
     }
 
-    public GroupedDataFrame groupbyS(String colname){
+    public GroupedDataFrame groupby(String colname){
 
         GroupedDataFrame r = new GroupedDataFrame();
         int it = 0;
@@ -297,13 +302,13 @@ public class DataFrame implements Cloneable{
         GroupedDataFrame result = new GroupedDataFrame();
         for(int i=0;i<colnames.length;i++){
             if(i == 0){
-                result = this.groupbyS(colnames[0]);
+                result = this.groupby(colnames[0]);
             }else{
                 GroupedDataFrame prev_res = result;
                 result = new GroupedDataFrame();
                 result.key_id = prev_res.key_id;
                 for(DataFrame n: prev_res.dataframes){
-                    GroupedDataFrame tmp = n.groupbyS(colnames[i]);
+                    GroupedDataFrame tmp = n.groupby(colnames[i]);
                     result.linkGroupedLists(tmp);
                 }
             }
@@ -315,6 +320,190 @@ public class DataFrame implements Cloneable{
         GroupedDataFrame r = new GroupedDataFrame();
         r.dataframes.add(this);
         return r;
+    }
+
+    public class ThreadedGDF implements Groupby{
+        LinkedList<DataFrame> dataframes;
+        ArrayList<Integer> key_id;
+
+        public ThreadedGDF(ArrayList<Integer> a,LinkedList<DataFrame> b){
+            key_id = a;
+            dataframes = b;
+        }
+
+        @Override
+        public DataFrame max(){
+            ExecutorService executor = Executors.newFixedThreadPool(15);
+            ArrayList<Future<DataFrame>> results = new ArrayList<>();
+            int it =0;
+            String[] cn = dataframes.peekFirst().cnames;
+            List<Class<? extends Value>> ct = dataframes.peekFirst().ctypes;
+            while(it < dataframes.size()){
+                results.add(executor.submit(new OperationOnDf(0,dataframes.get(it),key_id)));
+                it++;
+            }
+            DataFrame ret = new DataFrame(cn,ct);
+            for(int i=0;i<it;i++){
+                try {
+                    DataFrame tmp = results.get(i).get();
+                    for(int j=0;j<ret.width;j++){
+                        ret.Add(tmp.colms[j].col.get(0),j);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            executor.shutdown();
+            return ret;
+        }
+
+        @Override
+        public DataFrame min() {
+            ExecutorService executor = Executors.newFixedThreadPool(15);
+            ArrayList<Future<DataFrame>> results = new ArrayList<>();
+            int it =0;
+            String[] cn = dataframes.peekFirst().cnames;
+            List<Class<? extends Value>> ct = dataframes.peekFirst().ctypes;
+            while(it < dataframes.size()){
+                results.add(executor.submit(new OperationOnDf(1,dataframes.get(it),key_id)));
+                it++;
+            }
+            DataFrame ret = new DataFrame(cn,ct);
+            for(int i=0;i<it;i++){
+                try {
+                    DataFrame tmp = results.get(i).get();
+                    for(int j=0;j<ret.width;j++){
+                        ret.Add(tmp.colms[j].col.get(0),j);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            executor.shutdown();
+            return ret;
+        }
+
+        @Override
+        public DataFrame mean() {
+            ExecutorService executor = Executors.newFixedThreadPool(15);
+            ArrayList<Future<DataFrame>> results = new ArrayList<>();
+            int it =0;
+            String[] cn = dataframes.peekFirst().cnames;
+            List<Class<? extends Value>> ct = dataframes.peekFirst().ctypes;
+            while(it < dataframes.size()){
+                results.add(executor.submit(new OperationOnDf(3,dataframes.get(it),key_id)));
+                it++;
+            }
+            DataFrame ret = new DataFrame(cn,ct);
+            for(int i=0;i<it;i++){
+                try {
+                    DataFrame tmp = results.get(i).get();
+                    for(int j=0;j<ret.width;j++){
+                        ret.Add(tmp.colms[j].col.get(0),j);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            executor.shutdown();
+            return ret;
+        }
+
+        @Override
+        public DataFrame std() {
+            ExecutorService executor = Executors.newFixedThreadPool(15);
+            ArrayList<Future<DataFrame>> results = new ArrayList<>();
+            int it =0;
+            String[] cn = dataframes.peekFirst().cnames;
+            List<Class<? extends Value>> ct = dataframes.peekFirst().ctypes;
+            while(it < dataframes.size()){
+                results.add(executor.submit(new OperationOnDf(4,dataframes.get(it),key_id)));
+                it++;
+            }
+            DataFrame ret = new DataFrame(cn,ct);
+            for(int i=0;i<it;i++){
+                try {
+                    DataFrame tmp = results.get(i).get();
+                    for(int j=0;j<ret.width;j++){
+                        ret.Add(tmp.colms[j].col.get(0),j);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            executor.shutdown();
+            return ret;
+        }
+
+        @Override
+        public DataFrame sum() {
+            ExecutorService executor = Executors.newFixedThreadPool(15);
+            ArrayList<Future<DataFrame>> results = new ArrayList<>();
+            int it =0;
+            String[] cn = dataframes.peekFirst().cnames;
+            List<Class<? extends Value>> ct = dataframes.peekFirst().ctypes;
+            while(it < dataframes.size()){
+                results.add(executor.submit(new OperationOnDf(2,dataframes.get(it),key_id)));
+                it++;
+            }
+            DataFrame ret = new DataFrame(cn,ct);
+            for(int i=0;i<it;i++){
+                try {
+                    DataFrame tmp = results.get(i).get();
+                    for(int j=0;j<ret.width;j++){
+                        ret.Add(tmp.colms[j].col.get(0),j);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            executor.shutdown();
+            return ret;
+        }
+
+        @Override
+        public DataFrame var() {
+            ExecutorService executor = Executors.newFixedThreadPool(15);
+            ArrayList<Future<DataFrame>> results = new ArrayList<>();
+            int it =0;
+            String[] cn = dataframes.peekFirst().cnames;
+            List<Class<? extends Value>> ct = dataframes.peekFirst().ctypes;
+            while(it < dataframes.size()){
+                results.add(executor.submit(new OperationOnDf(5,dataframes.get(it),key_id)));
+                it++;
+            }
+            DataFrame ret = new DataFrame(cn,ct);
+            for(int i=0;i<it;i++){
+                try {
+                    DataFrame tmp = results.get(i).get();
+                    for(int j=0;j<ret.width;j++){
+                        ret.Add(tmp.colms[j].col.get(0),j);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            executor.shutdown();
+            return ret;
+        }
+
+        @Override
+        public DataFrame apply(Applyable a) {
+            return null;
+        }
+
     }
 
     public DataFrame(String[] col_names,List<Class<? extends Value>> col_types){
@@ -465,6 +654,34 @@ public class DataFrame implements Cloneable{
         System.out.println();
     }
 
+    public void toCSV(String filename) throws IOException {
+        String tofile = "";
+        int it = 0;
+        for(String n: cnames) {
+            tofile = tofile + n;
+            if(it != width-1) tofile = tofile + ",";
+            it++;
+        }
+        tofile = tofile + "\n";
+        for(int i=0;i<heigth;i++){
+            for(int j=0;j<width;j++){
+                tofile = tofile + colms[j].col.get(i).toString();
+                if(j != width-1) tofile = tofile + ",";
+            }
+            tofile = tofile + "\n";
+        }
+        tofile = tofile + "\n";
+        File file = new File("./" + filename);
+        if(file.createNewFile()){
+            System.out.println(filename + ": OK");
+            BufferedWriter writer = new BufferedWriter(new FileWriter("./" + filename));
+            writer.write(tofile);
+            writer.close();
+        }else{
+            System.out.println(filename + ": already exists");
+        }
+    }
+
     public static void main(String[] args){
         ArrayList<Class<? extends Value>> ct = new ArrayList<>();
         /*
@@ -486,8 +703,9 @@ public class DataFrame implements Cloneable{
         ct.add(VDouble.class);
         try {
             DataFrame df1 = new DataFrame("groupby.csv",ct,true);
-            DataFrame df2 = df1.iloc(100000);
-            df2.groupby(new String[]{"date"}).mean().print();
+            System.out.println("OK");
+            df1.groupby("id").toThreadedGDF().mean().toCSV("asd.csv");
+            df1.groupby("id").mean().print();
         } catch (IllegalAccessException | InstantiationException | IOException | IncorrectWidth e) {
             e.printStackTrace();
         }

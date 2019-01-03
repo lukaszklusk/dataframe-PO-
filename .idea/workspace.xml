@@ -7,6 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2dbdf24c-8c96-48b0-865e-9d24baf0a41b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dataframe/OperationOnDf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/dataframe_jar/dataframe.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/dataframe_jar/dataframe.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataframe/dataframe/DataFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dataframe/dataframe/DataFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataframe/DataFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataframe/DataFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,11 +24,11 @@
     <session id="1181051139">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.200" value="1" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.31" value="2" />
+          <entry key="project.open.time.31" value="3" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.42" value="1" />
@@ -32,6 +36,7 @@
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.49" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.54" value="1" />
@@ -41,51 +46,61 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.93" value="1" />
           <entry key="project.open.time.97" value="1" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dataframe" value="167" />
-          <entry key="java" value="17322" />
+          <entry key="java" value="19457" />
           <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="17489" />
+          <entry key="JAVA" value="19624" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="4" />
-          <entry key="csv" value="3" />
+          <entry key="class" value="5" />
+          <entry key="csv" value="5" />
           <entry key="dataframe" value="1" />
-          <entry key="java" value="67" />
+          <entry key="java" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="4" />
-          <entry key="JAVA" value="68" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="CLASS" value="5" />
+          <entry key="JAVA" value="70" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="316" column="17" selection-start-line="316" selection-start-column="17" selection-end-line="316" selection-end-column="17" />
+            <state relative-caret-position="399">
+              <caret line="699" column="29" selection-start-line="699" selection-start-column="29" selection-end-line="699" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#GroupedDataFrame#0;class#DataFrame#0" />
-                <element signature="method#groupbyS#0;class#DataFrame#0" />
+                <element signature="method#max#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+                <element signature="method#min#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+                <element signature="method#mean#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+                <element signature="method#std#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+                <element signature="method#sum#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+                <element signature="method#var#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+                <element signature="method#linkGroupedLists#0;class#GroupedDataFrame#0;class#DataFrame#0" />
                 <element signature="method#groupby#0;class#DataFrame#0" />
+                <element signature="method#groupby#1;class#DataFrame#0" />
+                <element signature="method#groupby#2;class#DataFrame#0" />
+                <element signature="e#15312#15313#0" expanded="true" />
+                <element signature="e#15347#15348#0" expanded="true" />
                 <element signature="method#DataFrame#0;class#DataFrame#0" />
                 <element signature="method#DataFrame#1;class#DataFrame#0" />
                 <element signature="method#addS#0;class#DataFrame#0" />
@@ -100,18 +115,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/groupby.csv">
           <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="-2745" />
+            <state relative-caret-position="-720" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrameDB.java">
+        <entry file="file://$PROJECT_DIR$/src/dataframe/OperationOnDf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="720">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,10 +135,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dataframe/SparseDataFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrameDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+            <state relative-caret-position="1545">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,6 +197,7 @@
         <option value="$PROJECT_DIR$/src/dataframe/VDouble.java" />
         <option value="$PROJECT_DIR$/src/dataframe/CooValue.java" />
         <option value="$PROJECT_DIR$/src/dataframe/DataFrameDB.java" />
+        <option value="$PROJECT_DIR$/src/dataframe/OperationOnDf.java" />
         <option value="$PROJECT_DIR$/src/dataframe/DataFrame.java" />
       </list>
     </option>
@@ -201,6 +220,22 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="dataframe" type="58d84e3e:PackageViewProjectNode" />
+              <item name="dataframe" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="dataframe" type="58d84e3e:PackageViewProjectNode" />
+              <item name="dataframe" type="616d4139:PackageViewModuleNode" />
+              <item name="dataframe" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,29 +280,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="dataframe" type="58d84e3e:PackageViewProjectNode" />
-              <item name="dataframe" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="dataframe" type="58d84e3e:PackageViewProjectNode" />
-              <item name="dataframe" type="616d4139:PackageViewModuleNode" />
-              <item name="dataframe" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544126063102" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546545791494" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.21147357" />
@@ -290,7 +309,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DataFrameDB">
+  <component name="RunManager" selected="Application.DataFrame">
     <configuration name="DataFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dataframe.DataFrame" />
       <module name="dataframe" />
@@ -317,8 +336,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DataFrameDB" />
         <item itemvalue="Application.DataFrame" />
+        <item itemvalue="Application.DataFrameDB" />
       </list>
     </recent_temporary>
   </component>
@@ -356,7 +375,7 @@
     <frame x="67" y="25" width="1853" height="925" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32595462" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33370227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -512,23 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataframe/VInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="230" column="34" selection-start-line="230" selection-start-column="34" selection-end-line="230" selection-end-column="34" />
-          <folding>
-            <element signature="e#5852#5853#0" expanded="true" />
-            <element signature="e#5892#5893#0" expanded="true" />
-            <element signature="e#5955#5956#0" expanded="true" />
-            <element signature="e#6003#6004#0" expanded="true" />
-            <element signature="e#6066#6067#0" expanded="true" />
-            <element signature="e#6115#6116#0" expanded="true" />
-            <element signature="e#6180#6181#0" expanded="true" />
-            <element signature="e#6230#6231#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dataframe/IncorrectWidth.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -540,39 +542,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.25.2.jar!/org/sqlite/core/DB.class">
+    <entry file="file://$PROJECT_DIR$/src/dataframe/SparseDataFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="400" selection-start-line="400" selection-end-line="400" />
+        <state relative-caret-position="848">
+          <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataframe/SparseDataFrame.java">
+    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.25.2.jar!/org/sqlite/core/DB.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+        <state relative-caret-position="168">
+          <caret line="401" selection-start-line="401" selection-end-line="401" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/VInteger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1126">
+          <caret line="230" column="34" selection-start-line="230" selection-start-column="34" selection-end-line="230" selection-end-column="34" />
+          <folding>
+            <element signature="e#5852#5853#0" expanded="true" />
+            <element signature="e#5894#5895#0" expanded="true" />
+            <element signature="e#5955#5956#0" expanded="true" />
+            <element signature="e#6003#6004#0" expanded="true" />
+            <element signature="e#6066#6067#0" expanded="true" />
+            <element signature="e#6115#6116#0" expanded="true" />
+            <element signature="e#6180#6181#0" expanded="true" />
+            <element signature="e#6230#6231#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrameDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="1545">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/groupby.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataframe/OperationOnDf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asd.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dataframe/DataFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="316" column="17" selection-start-line="316" selection-start-column="17" selection-end-line="316" selection-end-column="17" />
+        <state relative-caret-position="399">
+          <caret line="699" column="29" selection-start-line="699" selection-start-column="29" selection-end-line="699" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#GroupedDataFrame#0;class#DataFrame#0" />
-            <element signature="method#groupbyS#0;class#DataFrame#0" />
+            <element signature="method#max#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+            <element signature="method#min#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+            <element signature="method#mean#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+            <element signature="method#std#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+            <element signature="method#sum#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+            <element signature="method#var#0;class#GroupedDataFrame#0;class#DataFrame#0" />
+            <element signature="method#linkGroupedLists#0;class#GroupedDataFrame#0;class#DataFrame#0" />
             <element signature="method#groupby#0;class#DataFrame#0" />
+            <element signature="method#groupby#1;class#DataFrame#0" />
+            <element signature="method#groupby#2;class#DataFrame#0" />
+            <element signature="e#15312#15313#0" expanded="true" />
+            <element signature="e#15347#15348#0" expanded="true" />
             <element signature="method#DataFrame#0;class#DataFrame#0" />
             <element signature="method#DataFrame#1;class#DataFrame#0" />
             <element signature="method#addS#0;class#DataFrame#0" />
@@ -584,11 +635,6 @@
             <element signature="method#powr#0;class#DataFrame#0" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/groupby.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="-2745" />
       </provider>
     </entry>
   </component>
