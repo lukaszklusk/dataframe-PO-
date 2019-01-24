@@ -1,6 +1,8 @@
 package dataframe;
 
 import java.io.*;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -255,8 +257,11 @@ public class DataFrame implements Cloneable{
         }
 
         public ThreadedGDF toThreadedGDF(){
-             ThreadedGDF tgdf = new ThreadedGDF(key_id,dataframes);
-             return tgdf;
+            return new ThreadedGDF(key_id,dataframes);
+        }
+
+        public ServerGDF toServerGDF(){
+            return new ServerGDF(key_id,dataframes);
         }
     }
 
@@ -345,9 +350,9 @@ public class DataFrame implements Cloneable{
             DataFrame ret = new DataFrame(cn,ct);
             for(int i=0;i<it;i++){
                 try {
-                    DataFrame tmp = results.get(i).get();
+                    DataFrame temp = results.get(i).get();
                     for(int j=0;j<ret.width;j++){
-                        ret.Add(tmp.colms[j].col.get(0),j);
+                        ret.Add(temp.colms[j].col.get(0),j);
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -506,6 +511,100 @@ public class DataFrame implements Cloneable{
 
     }
 
+    public class ServerGDF implements Groupby{
+        LinkedList<DataFrame> dataframes;
+        ArrayList<Integer> key_id;
+
+        ServerGDF(ArrayList<Integer> a,LinkedList<DataFrame> b){
+            key_id = a;
+            dataframes = b;
+        }
+
+        @Override
+        public DataFrame max() {
+            DataFrame ret = null;
+            Socket dfSocket = null;
+            PrintWriter out = null;
+            BufferedReader in = null;
+
+            try {
+                dfSocket = new Socket("localhost", 6666);
+                out = new PrintWriter(dfSocket.getOutputStream(), true);
+                in = new BufferedReader(new InputStreamReader(
+                        dfSocket.getInputStream()));
+            } catch (UnknownHostException e) {
+                System.err.println("Don't know about host: localhost.");
+                System.exit(1);
+            } catch (IOException e) {
+                System.err.println("Couldn't get I/O for "
+                        + "the connection to: localhost.");
+                System.exit(1);
+            }
+
+            out.println(this.toString());
+            out.println(dataframes.peekFirst().cnames[key_id.get(0)]);
+            out.println("max");
+            try {
+                ret = DataFrame.fromString(in.readLine());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            out.close();
+            try {
+                in.close();
+                dfSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return ret;
+        }
+
+        @Override
+        public DataFrame min() {
+            return null;
+        }
+
+        @Override
+        public DataFrame mean() {
+            return null;
+        }
+
+        @Override
+        public DataFrame std() {
+            return null;
+        }
+
+        @Override
+        public DataFrame sum() {
+            return null;
+        }
+
+        @Override
+        public DataFrame var() {
+            return null;
+        }
+
+        @Override
+        public DataFrame apply(Applyable a) {
+            return null;
+        }
+
+        @Override
+        public String toString(){
+            String r ="";
+            for(DataFrame n: dataframes){
+                r += n.toString() + "-";
+            }
+            r = r.substring(0,r.length()-1);
+            return r;
+        }
+
+    }
+
     public DataFrame(String[] col_names,List<Class<? extends Value>> col_types){
         cnames = col_names;
         ctypes = col_types;
@@ -642,6 +741,101 @@ public class DataFrame implements Cloneable{
         return dfr;
     }
 
+    public static DataFrame fromString(String df_str) throws IllegalAccessException, InstantiationException {
+        String word = "";
+        int c = 0,l = -2,w = 1;
+        for(int i=0;i<df_str.length();i++){
+            if(df_str.charAt(i) == ','){
+                w++;
+            }else if(df_str.charAt(i) == '|'){
+                break;
+            }
+        }
+        String[] cn = new String[w];
+        ArrayList<Class<? extends Value>> ct = new ArrayList<>();
+        int i =0;
+        for(i=0;i<df_str.length();i++){
+            String current = df_str.substring(i,i+1);
+            if(current.equals(",")){
+                if(l == -2){
+                    cn[c] = word;
+                    word = "";
+                }
+                else if(l == -1){
+                    if(word.equals("I")){
+                        ct.add(VInteger.class);
+                    }
+                    if(word.equals("D")){
+                        ct.add(VDouble.class);
+                    }
+                    if(word.equals("F")){
+                        ct.add(VFloat.class);
+                    }
+                    if(word.equals("T")){
+                        ct.add(VDatetime.class);
+                    }
+                    if(word.equals("S")){
+                        ct.add(VString.class);
+                    }
+                    word = "";
+                }
+                c++;
+            }else if(current.equals("|")){
+                if(l == -2){
+                    cn[c] = word;
+                    word = "";
+                }
+                else if(l == -1){
+                    if(word.equals("I")){
+                        ct.add(VInteger.class);
+                    }
+                    if(word.equals("D")){
+                        ct.add(VDouble.class);
+                    }
+                    if(word.equals("F")){
+                        ct.add(VFloat.class);
+                    }
+                    if(word.equals("T")){
+                        ct.add(VDatetime.class);
+                    }
+                    if(word.equals("S")){
+                        ct.add(VString.class);
+                    }
+                    word = "";
+                }
+                l++;
+                c = 0;
+            }
+            else{
+                word += current;
+            }
+            if( l == 0) break;
+        }
+        word = "";
+        c = 0;
+        DataFrame r = new DataFrame(cn,ct);
+        for(i=i+1;i<df_str.length();i++){
+            String current = df_str.substring(i,i+1);
+            if(current.equals(",")){
+                r.addS(word,c);
+                word = "";
+                c++;
+            }
+            else if(current.equals("|")){
+                r.addS(word,c);
+                word = "";
+                c= 0;
+                l++;
+            }else{
+                word += current;
+            }
+            if(i == df_str.length()-1){
+                r.addS(word,c);
+            }
+        }
+        return r;
+    }
+
     public void print(){
         for(String n: cnames) System.out.print(n + " ");
         System.out.println();
@@ -652,6 +846,40 @@ public class DataFrame implements Cloneable{
             System.out.println();
         }
         System.out.println();
+    }
+
+    @Override
+    public String toString(){
+        String r = "";
+        for(int i=0;i<width;i++){
+            r += cnames[i];
+            if(i < width-1) r += ",";
+            else r += "|";
+        }
+        for(int i=0;i<width;i++){
+            try {
+                if(ctypes.get(i).newInstance() instanceof VInteger) r += "I";
+                else if(ctypes.get(i).newInstance() instanceof VDouble) r += "D";
+                else if(ctypes.get(i).newInstance() instanceof VFloat) r += "F";
+                else if(ctypes.get(i).newInstance() instanceof VDatetime) r += "T";
+                else r += "S";
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            if(i < width-1) r += ",";
+            else r += "|";
+        }
+        for(int i=0;i<heigth;i++){
+            for(int j=0;j<width;j++){
+                r += colms[j].col.get(i).toString();
+                if(j < width-1) r += ",";
+            }
+            r += "|";
+        }
+        r = r.substring(0,r.length()-1);
+        return r;
     }
 
     public void toCSV(String filename) throws IOException {
@@ -697,15 +925,13 @@ public class DataFrame implements Cloneable{
         //gdf.dataframes.get(0).print();
         //gdf.dataframes.get(1).print();*/
 
+        ct.add(VInteger.class);
         ct.add(VString.class);
-        ct.add(VDatetime.class);
-        ct.add(VDouble.class);
         ct.add(VDouble.class);
         try {
-            DataFrame df1 = new DataFrame("groupby.csv",ct,true);
+            DataFrame df1 = new DataFrame("data1.csv",ct,true);
             System.out.println("OK");
-            df1.groupby("id").toThreadedGDF().mean().toCSV("asd.csv");
-            df1.groupby("id").mean().print();
+            df1.groupby("a").toServerGDF().max().print();
         } catch (IllegalAccessException | InstantiationException | IOException | IncorrectWidth e) {
             e.printStackTrace();
         }
